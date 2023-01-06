@@ -17,5 +17,8 @@ st.subheader('Use the dropdowns on the left to sort through different teams or y
 # Diplay the default dataframe.
 st.dataframe(df, use_container_width=True)
 
+years = df['year'].drop_duplicates()
+make_choice = st.sidebar.selectbox('Select your year:', years)
+
 
 st.write('Where did you go wrong?')
