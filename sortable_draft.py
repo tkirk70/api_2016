@@ -2,6 +2,9 @@
 import pandas as pd
 import streamlit as st 
 
+# Try to increase width of layout
+st.set_page_config(layout="wide")
+
 # Load df from excel
 df = pd.read_excel('combined_newbees_draft.xlsx')
 # Get rid of index
