@@ -5,7 +5,7 @@ import streamlit as st
 # Load df from excel
 df = pd.read_excel('combined_newbees_draft.xlsx')
 # Get rid of index
-df.reset_index(drop=True, inplace=True)
+df.reset_index(drop=True, inplace=False)
 
 # Create header and subheader
 st.title('Sortable Newbees Drafts: 2013-2020')
