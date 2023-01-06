@@ -14,7 +14,7 @@ df = pd.read_excel('combined_newbees_draft.xlsx')
 # st.dataframe(filtered_df)
 
 # Get rid of index
-df.reset_index(drop=True, inplace=True)
+# df.reset_index(drop=True, inplace=True)
 
 # Create header and subheader
 st.title('Sortable Newbees Drafts: 2013-2020')
@@ -22,6 +22,13 @@ st.subheader('Use the dropdowns on the left to sort through different teams or y
 
 # Diplay the default dataframe.
 st.dataframe(df, use_container_width=True)
+
+options = df['year'].unique().tolist()
+selected_options = st.sidebar.multiselect('Which year do you want?',options)
+
+filtered_df = df[df["year"].isin(selected_options)]
+
+st.dataframe(filtered_df)
 
 
 
