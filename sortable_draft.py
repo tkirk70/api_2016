@@ -24,11 +24,11 @@ st.subheader('Use the dropdowns on the left to sort through different teams or y
 st.dataframe(df, use_container_width=True)
 
 options = df['year'].unique().tolist()
-selected_options = st.sidebar.select('Which year do you want?',options)
+selected_options = st.sidebar.selectbox('Which year do you want?',options)
 filtered_df = df[df["year"].isin(selected_options)]
 
 team_options = df['newbees_team'].unique().tolist()
-selected_teams = st.sidebar.select('Which team do you want?',team_options)
+selected_teams = st.sidebar.selectbox('Which team do you want?',team_options)
 filtered_df2 = filtered_df[filtered_df["newbees_team"].isin(selected_teams)]
 
 st.dataframe(filtered_df)
