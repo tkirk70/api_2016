@@ -23,7 +23,7 @@ st.subheader('Use the dropdowns on the left to sort through different teams or y
 # Diplay the default dataframe.
 st.dataframe(df, use_container_width=True)
 
-options = df['year'].unique().tolist()
+options = df['year'].drop_duplicates()
 selected_options = st.sidebar.selectbox('Which year do you want?',options)
 st.write(selected_options)
 filtered_df = df[df['year'].isin(selected_options)]
