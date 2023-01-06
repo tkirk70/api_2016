@@ -7,6 +7,10 @@ st.set_page_config(layout="wide")
 
 # Load df from excel
 df = pd.read_excel('combined_newbees_draft.xlsx')
+# Filter by year
+years = df['year'].drop_duplicates()
+make_choice = st.sidebar.selectbox('Select your year:', years)
+df = df[df.loc['year'] == years]
 # Get rid of index
 df.reset_index(drop=True, inplace=True)
 
@@ -17,9 +21,7 @@ st.subheader('Use the dropdowns on the left to sort through different teams or y
 # Diplay the default dataframe.
 st.dataframe(df, use_container_width=True)
 
-years = df['year'].drop_duplicates()
-make_choice = st.sidebar.selectbox('Select your year:', years)
-df = df[df.loc['year'] == years]
+
 
 
 st.write('Where did you go wrong?')
