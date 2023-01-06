@@ -25,6 +25,7 @@ st.dataframe(df, use_container_width=True)
 
 options = df['year'].unique().tolist()
 selected_options = st.sidebar.selectbox('Which year do you want?',options)
+st.write(selected_options)
 filtered_df = df[df['year'].isin(selected_options)]
 
 # team_options = df['newbees_team'].unique().tolist()
