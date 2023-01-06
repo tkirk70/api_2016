@@ -3,7 +3,7 @@ import pandas as pd
 import streamlit as st 
 
 # Load df from excel
-df = pd.read_excel('combined_newbees_draft.xlsx', index=False)
+df = pd.read_excel('combined_newbees_draft.xlsx')
 
 # Create header and subheader
 st.title('Sortable Newbees Drafts: 2013-2020')
