@@ -29,9 +29,10 @@ filtered_df = df[df["year"].isin(selected_options)]
 
 team_options = df['newbees_team'].unique().tolist()
 selected_teams = st.sidebar.select('Which team do you want?',team_options)
-filtered_df = filtered_df[filtered_df["newbees_team"].isin(selected_teams)]
+filtered_df2 = filtered_df[filtered_df["newbees_team"].isin(selected_teams)]
 
 st.dataframe(filtered_df)
+st.dataframe(filtered_df2)
 
 
 
