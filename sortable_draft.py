@@ -19,6 +19,7 @@ st.dataframe(df, use_container_width=True)
 
 years = df['year'].drop_duplicates()
 make_choice = st.sidebar.selectbox('Select your year:', years)
+df = df.loc[df['year'] == years]]
 
 
 st.write('Where did you go wrong?')
