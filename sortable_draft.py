@@ -12,7 +12,7 @@ st.title('Sortable Newbees Drafts: 2013-2020')
 st.subheader('Use the dropdowns on the left to sort through different teams or years.')
 
 # Diplay the default dataframe.
-st.dataframe(df)
+st.dataframe(df, use_container_width=True)
 
 
 st.write('Where did you go wrong?')
